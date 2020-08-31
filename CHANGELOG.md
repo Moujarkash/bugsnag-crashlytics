@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial release of Bugsnag Crashlytics plugin.
+This version reports uncaught errors as non-fatal exceptions in the
+Bugsnag console.
