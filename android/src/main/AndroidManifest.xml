@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="mod.flutter.plugins.bugsnag.crashlytics.bugsnag_crashlytics">
+    <application>
+        <meta-data android:name="com.bugsnag.android.API_KEY"
+            android:value="3d5855d9c4567d4ah7d03bt5tfd10247"/>
+    </application>
+</manifest>
