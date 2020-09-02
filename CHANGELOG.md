@@ -1,3 +1,11 @@
+## 0.0.3
+
+* Added support for Bugsnag on iOS
+
+## 0.0.2
+
+* Updated Documentation
+
 ## 0.0.1
 
 * Initial release of Bugsnag Crashlytics plugin.
