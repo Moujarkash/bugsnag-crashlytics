@@ -16,8 +16,8 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         let arguments = call.arguments as? NSDictionary
         let apiKey = arguments!["api_key"] as! String
         if (apiKey != nil) {
-            let config = BugsnagConfiguration.loadConfig()
-            config.apiKey = apiKey;
+            let config = BugsnagConfiguration(apiKey)
+
             Bugsnag.start(with: config)
             bugsnagStarted = true
       }
