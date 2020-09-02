@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Hot fixes for iOS
+
 ## 0.0.3
 
 * Added support for Bugsnag on iOS

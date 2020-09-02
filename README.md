@@ -17,7 +17,7 @@ Setup `Crashlytics`:
 void main() {
   
   // pass your key api of bugsnag to the plugin to setup
-  BugsnagCrashlytics.instance.register('API_KEY');
+  BugsnagCrashlytics.instance.register(androidApiKey: "ANDROID_API_KEY", iosApiKey: "IOS_API_KEY");
   
   // Pass all uncaught errors from the framework to Crashlytics.
   FlutterError.onError = BugsnagCrashlytics.instance.recordFlutterError;
