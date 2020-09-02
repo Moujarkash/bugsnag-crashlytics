@@ -1,0 +1,29 @@
+PODS:
+  - Bugsnag (5.23.5)
+  - bugsnag_crashlytics (0.0.1):
+    - Bugsnag
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - bugsnag_crashlytics (from `.symlinks/plugins/bugsnag_crashlytics/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - Bugsnag
+
+EXTERNAL SOURCES:
+  bugsnag_crashlytics:
+    :path: ".symlinks/plugins/bugsnag_crashlytics/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  Bugsnag: 5c3f9d33e88c824a0038e1b14629045929182cbb
+  bugsnag_crashlytics: ee0b687f514ad22a07d1984f77d13deca56fa84a
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.1

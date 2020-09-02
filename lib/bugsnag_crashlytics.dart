@@ -1,5 +1,6 @@
 
 import 'dart:async';
+import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +12,16 @@ class BugsnagCrashlytics {
   static const MethodChannel _channel =
       const MethodChannel('bugsnag_crashlytics');
 
-   Future<void> register(String apiKey) async {
+   Future<void> register({String androidApiKey, String iosApiKey}) async {
+     var apiKey;
+
+     if (Platform.isIOS)
+       apiKey = iosApiKey;
+     else if (Platform.isAndroid)
+       apiKey = androidApiKey;
+     else
+       throw Exception("Not supported platform");
+
     await _channel.invokeMethod('Crashlytics#setApiKey', <String, String>{'api_key': apiKey});
   }
 

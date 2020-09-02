@@ -23,3 +23,5 @@ flutter:
       android:
         package: mod.flutter.plugins.bugsnag.crashlytics.bugsnag_crashlytics
         pluginClass: BugsnagCrashlyticsPlugin
+      ios:
+        pluginClass: BugsnagCrashlyticsPlugin
