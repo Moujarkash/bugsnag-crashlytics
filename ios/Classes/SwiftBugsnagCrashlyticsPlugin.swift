@@ -14,10 +14,10 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     if (call.method == "Crashlytics#setApiKey") {
         let arguments = call.arguments as? NSDictionary
-        let apiKey = arguments!["api_key"] as? String
+        let apiKey = arguments!["api_key"] as! String
         if (apiKey != nil) {
-            let config = BugsnagConfiguration()
-            config.apiKey = apiKey;
+            let config = BugsnagConfiguration(apiKey)
+
             Bugsnag.start(with: config)
             bugsnagStarted = true
       }
