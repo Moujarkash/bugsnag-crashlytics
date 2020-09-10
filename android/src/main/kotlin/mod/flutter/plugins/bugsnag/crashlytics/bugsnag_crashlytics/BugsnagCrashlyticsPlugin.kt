@@ -33,6 +33,14 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
       if(apiKey != null) {
         val config = Configuration.load(context)
         config.apiKey = apiKey
+        val appVersion = call.argument<String>("appVersion")
+        if(appVersion != null) {
+          config.appVersion = appVersion
+        }
+        val releaseStage = call.argument<String>("releaseStage")
+        if(releaseStage != null) {
+          config.releaseStage = releaseStage
+        }
         Bugsnag.start(context, config)
         bugsnagStarted = true
       }
