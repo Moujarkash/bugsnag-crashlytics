@@ -1,3 +1,7 @@
+## 0.0.5
+
+* App version and release stage for Bugsnag configuration option
+
 ## 0.0.4
 
 * Hot fixes for iOS

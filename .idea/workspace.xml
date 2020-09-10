@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5494f4e-41d2-48f0-a552-c1cd02aaddd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    <list default="true" id="a5494f4e-41d2-48f0-a552-c1cd02aaddd7" name="Default Changelist" comment="- updated version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +54,28 @@
       <option name="project" value="LOCAL" />
       <updated>1599073986318</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="- updated version">
+      <created>1599077343085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599077343085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="- updated example" />
     <MESSAGE value="- updated example&#10;- added support for Bugsnag on iOS" />
     <MESSAGE value="- hot fix ios" />
-    <option name="LAST_COMMIT_MESSAGE" value="- hot fix ios" />
+    <MESSAGE value="- updated version" />
+    <option name="LAST_COMMIT_MESSAGE" value="- updated version" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="469" y="23" key="CommitChangelistDialog2" timestamp="1599052825293">
-      <screen x="0" y="23" width="1902" height="780" />
+    <state x="337" y="0" key="CommitChangelistDialog2" timestamp="1599077588007">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1598858923798" />
+    <state x="337" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1599077588007" />
     <state x="469" y="23" key="CommitChangelistDialog2/0.23.1902.780@0.23.1902.780" timestamp="1599052825293" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598857733007">
       <screen x="0" y="0" width="1366" height="728" />
@@ -103,10 +110,10 @@
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598214061633" />
     <state x="256" y="7" key="SettingsEditor/0.0.1902.871@0.0.1902.871" timestamp="1599035376164" />
-    <state x="387" y="129" key="Vcs.Push.Dialog.v2" timestamp="1599074146465">
-      <screen x="0" y="23" width="1920" height="798" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1599077596405">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1598858943871" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1599077596405" />
     <state x="383" y="127" key="Vcs.Push.Dialog.v2/0.23.1902.780@0.23.1902.780" timestamp="1599052842063" />
     <state x="387" y="129" key="Vcs.Push.Dialog.v2/0.23.1920.798@0.23.1920.798" timestamp="1599074146465" />
     <state x="1458" y="92" width="1182" height="544" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1598275346091">

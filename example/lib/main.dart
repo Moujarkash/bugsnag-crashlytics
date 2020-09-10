@@ -6,7 +6,7 @@ import 'package:bugsnag_crashlytics/bugsnag_crashlytics.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  BugsnagCrashlytics.instance.register(androidApiKey: "ANDROID_API_KEY", iosApiKey: "IOS_API_KEY");
+  BugsnagCrashlytics.instance.register(androidApiKey: "ANDROID_API_KEY", iosApiKey: "IOS_API_KEY", releaseStage: 'RELEASE_STAGE', appVersion: 'APP_VERSION');
 
   FlutterError.onError = BugsnagCrashlytics.instance.recordFlutterError;
 
