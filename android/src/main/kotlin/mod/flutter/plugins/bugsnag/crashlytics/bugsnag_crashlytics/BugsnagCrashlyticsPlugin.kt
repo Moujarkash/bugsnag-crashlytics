@@ -41,6 +41,12 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
         if(releaseStage != null) {
           config.releaseStage = releaseStage
         }
+
+        val persistUser = call.argument<Boolean>("persistUser")
+        if(persistUser != null) {
+          config.persistUser = persistUser
+        }
+
         Bugsnag.start(context, config)
         bugsnagStarted = true
 

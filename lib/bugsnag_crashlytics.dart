@@ -17,6 +17,7 @@ class BugsnagCrashlytics {
     String iosApiKey,
     String releaseStage,
     String appVersion,
+    bool persistUser,
   }) async {
     var apiKey;
 
@@ -34,6 +35,8 @@ class BugsnagCrashlytics {
 
     addIfNotNull('releaseStage', releaseStage);
     addIfNotNull('appVersion', appVersion);
+
+    addIfNotNull('persistUser', persistUser);
 
     await _channel.invokeMethod('Crashlytics#setApiKey', config);
   }

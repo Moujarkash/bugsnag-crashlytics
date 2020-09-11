@@ -25,6 +25,10 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
       if let appVersion = arguments["appVersion"] as? String {
        config.appVersion = appVersion
       }
+      if let persistUser = arguments["persistUser"] as? Bool {
+        // TODO Bugsnag SDK 6+ only
+        //config.persistUser = persistUser
+      }
       Bugsnag.start(with: config)
       bugsnagStarted = true
       result(nil)
