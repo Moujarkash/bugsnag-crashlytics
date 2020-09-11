@@ -42,6 +42,20 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         else {
             result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
         }
+    } else if (call.method == "Crashlytics#report") {
+        if (bugsnagStarted) {
+            let arguments = call.arguments as? NSDictionary
+            
+            let userId = arguments!["user_id"] as! String
+            let userEmail = arguments!["user_email"] as! String
+            let userName = arguments!["user_name"] as! String
+            
+            Bugsnag.configuration()?.setUser(userId, withName: userName, andEmail: userEmail)
+            result(nil)
+        }
+        else {
+            result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
+        }
     }
     else {
         result(FlutterMethodNotImplemented)

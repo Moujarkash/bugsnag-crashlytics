@@ -37,6 +37,20 @@ class BugsnagCrashlytics {
     await _channel.invokeMethod('Crashlytics#setApiKey', config);
   }
 
+  Future<void> addUserData({
+    String userId,
+    String userEmail,
+    String userName,
+  }) async {
+    HashMap userData = HashMap<String, String>();
+
+    userData.putIfAbsent('user_id', () => userId);
+    userData.putIfAbsent('user_email', () => userEmail);
+    userData.putIfAbsent('user_name', () => userName);
+
+    await _channel.invokeMethod('Crashlytics#setUserData', userData);
+  }
+
   Future<void> recordFlutterError(FlutterErrorDetails details) async {
     print('Flutter error caught by Crashlytics plugin:');
     // Since multiple errors can be caught during a single session, we set
