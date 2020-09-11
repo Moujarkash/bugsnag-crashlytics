@@ -42,7 +42,7 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         else {
             result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
         }
-    } else if (call.method == "Crashlytics#report") {
+    } else if (call.method == "Crashlytics#setUserData") {
         if (bugsnagStarted) {
             let arguments = call.arguments as? NSDictionary
             
