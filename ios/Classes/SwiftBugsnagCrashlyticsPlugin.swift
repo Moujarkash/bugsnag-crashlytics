@@ -30,11 +30,14 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
       result(nil)
     } else if (call.method == "Crashlytics#report") {
         if (bugsnagStarted) {
-            let arguments = call.arguments as? NSDictionary
-            let info = arguments!["information"] as? String
-            
-            let exception = NSException(name:NSExceptionName(rawValue: "Bugsnag Exception"), reason: info)
-            Bugsnag.notify(exception)
+          let arguments = call.arguments as? NSDictionary
+          let info = arguments!["information"] as? String
+          let exceptionSource = arguments!["exception"] as? String ?? "Bugsnag Exception"
+          //let stackTraceElements = arguments!["stackTraceElements"] as? NSDictionary
+          
+          let exception = NSException(name:NSExceptionName(rawValue: exceptionSource), reason: info)
+          Bugsnag.notify(exception)
+          result(nil)
         }
         else {
             result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
