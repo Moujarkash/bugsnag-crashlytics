@@ -52,7 +52,8 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
 
     } else if (call.method == "Crashlytics#report") {
       if(bugsnagStarted) {
-        Bugsnag.notify(Exception(call.argument<String>("information")))
+        val info = if (call.argument<String>("information") != null) call.argument<String>("information") else ""
+        Bugsnag.notify(Exception(info))
       }
       else {
         result.error("Bugsnag not started", null, null)
