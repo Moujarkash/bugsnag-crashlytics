@@ -1,3 +1,11 @@
+## 0.0.6
+
+* Fix bugs on new 'appVersion' & 'releaseStage' on iOS because of missing empty/null management.
+Concerning improvements:
+
+Throw result success/fail with Result object
+Improvements on Exception display in Crashlytics#report
+
 ## 0.0.5
 
 * App version and release stage for Bugsnag configuration option
