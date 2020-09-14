@@ -17,7 +17,7 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         result(FlutterError(code: "api_key problem", message: nil, details: nil))
         return
       }
-      let config = BugsnagConfiguration();
+      let config = BugsnagConfiguration.loadConfig();
       config.apiKey = apiKey;
       if let releaseStage = arguments["releaseStage"] as? String {
        config.releaseStage = releaseStage
@@ -26,8 +26,7 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
        config.appVersion = appVersion
       }
       if let persistUser = arguments["persistUser"] as? Bool {
-        // TODO Bugsnag SDK 6+ only
-        //config.persistUser = persistUser
+        config.persistUser = persistUser
       }
       Bugsnag.start(with: config)
       bugsnagStarted = true
@@ -54,7 +53,7 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
             let userEmail = arguments!["user_email"] as! String
             let userName = arguments!["user_name"] as! String
             
-            Bugsnag.configuration()?.setUser(userId, withName: userName, andEmail: userEmail)
+            Bugsnag.setUser(userId, withEmail: userEmail, andName: userName)
             result(nil)
         }
         else {
