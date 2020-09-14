@@ -17,8 +17,7 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         result(FlutterError(code: "api_key problem", message: nil, details: nil))
         return
       }
-      let config = BugsnagConfiguration.loadConfig();
-      config.apiKey = apiKey;
+      let config = BugsnagConfiguration.init(apiKey)
       if let releaseStage = arguments["releaseStage"] as? String {
        config.releaseStage = releaseStage
       }
