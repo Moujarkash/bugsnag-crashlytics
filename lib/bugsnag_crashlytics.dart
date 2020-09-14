@@ -12,9 +12,9 @@ class BugsnagCrashlytics {
   static const MethodChannel _channel =
       const MethodChannel('bugsnag_crashlytics');
 
-  Future<void> register(
+  Future<void> register({
     String androidApiKey,
-    String iosApiKey, {
+    String iosApiKey,
     String releaseStage,
     String appVersion,
     bool persistUser,
