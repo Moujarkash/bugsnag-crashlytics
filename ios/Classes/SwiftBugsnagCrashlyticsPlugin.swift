@@ -48,9 +48,9 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         if (bugsnagStarted) {
             let arguments = call.arguments as? NSDictionary
             
-            let userId = arguments!["user_id"] as! String
-            let userEmail = arguments!["user_email"] as! String
-            let userName = arguments!["user_name"] as! String
+            let userId = arguments!["user_id"] as? String
+            let userEmail = arguments!["user_email"] as? String
+            let userName = arguments!["user_name"] as? String
             
             Bugsnag.setUser(userId, withEmail: userEmail, andName: userName)
             result(nil)
