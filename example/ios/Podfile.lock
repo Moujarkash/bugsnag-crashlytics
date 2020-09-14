@@ -1,5 +1,5 @@
 PODS:
-  - Bugsnag (6.1.3)
+  - Bugsnag (6.1.4)
   - bugsnag_crashlytics (0.0.6):
     - Bugsnag
     - Flutter
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  Bugsnag: 62dc800fefb846ec607b8434183311d501204465
+  Bugsnag: 955a7d5372789b4db5964a8e131ebc20e96ddd3a
   bugsnag_crashlytics: 2bcbf64303264b3a315359a89f81adbaaba049f6
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
