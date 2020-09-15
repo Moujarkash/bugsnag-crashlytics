@@ -1,3 +1,8 @@
+## 0.0.7
+
+* iOS Bugsnag SDK updated + 'setUser' option
+
+
 ## 0.0.6
 
 * Fix bugs on new 'appVersion' & 'releaseStage' on iOS because of missing empty/null management.
