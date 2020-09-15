@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:collection';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class BugsnagCrashlytics {
     String iosApiKey,
     String releaseStage,
     String appVersion,
+    bool persistUser,
   }) async {
     var apiKey;
 
@@ -34,7 +36,23 @@ class BugsnagCrashlytics {
     addIfNotNull('releaseStage', releaseStage);
     addIfNotNull('appVersion', appVersion);
 
+    addIfNotNull('persistUser', persistUser);
+
     await _channel.invokeMethod('Crashlytics#setApiKey', config);
+  }
+
+  Future<void> addUserData({
+    String userId,
+    String userEmail,
+    String userName,
+  }) async {
+    HashMap userData = HashMap<String, String>();
+
+    userData.putIfAbsent('user_id', () => userId);
+    userData.putIfAbsent('user_email', () => userEmail);
+    userData.putIfAbsent('user_name', () => userName);
+
+    await _channel.invokeMethod('Crashlytics#setUserData', userData);
   }
 
   Future<void> recordFlutterError(FlutterErrorDetails details) async {

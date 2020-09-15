@@ -41,6 +41,12 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
         if(releaseStage != null) {
           config.releaseStage = releaseStage
         }
+
+        val persistUser = call.argument<Boolean>("persistUser")
+        if(persistUser != null) {
+          config.persistUser = persistUser
+        }
+
         Bugsnag.start(context, config)
         bugsnagStarted = true
 
@@ -49,7 +55,6 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
       else {
         result.error("api_key problem", null, null);
       }
-
     } else if (call.method == "Crashlytics#report") {
       if(bugsnagStarted) {
         val info = if (call.argument<String>("information") != null) call.argument<String>("information") else ""
@@ -62,7 +67,21 @@ class BugsnagCrashlyticsPlugin: FlutterPlugin, MethodCallHandler {
       else {
         result.error("Bugsnag not started", null, null)
       }
-    } else {
+    } else if (call.method == "Crashlytics#setUserData") {
+      if (bugsnagStarted) {
+        val userId = call.argument<String>("user_id")
+        val userEmail = call.argument<String>("user_email")
+        val userName = call.argument<String>("user_name")
+
+        Bugsnag.setUser(userId, userEmail, userName);
+
+        result.success(null);
+      }
+      else {
+        result.error("Bugsnag not started", null, null)
+      }
+    }
+    else {
       result.notImplemented()
     }
   }

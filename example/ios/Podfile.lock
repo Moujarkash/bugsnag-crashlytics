@@ -1,6 +1,6 @@
 PODS:
-  - Bugsnag (5.23.5)
-  - bugsnag_crashlytics (0.0.1):
+  - Bugsnag (6.1.4)
+  - bugsnag_crashlytics (0.0.6):
     - Bugsnag
     - Flutter
   - Flutter (1.0.0)
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: Flutter
 
 SPEC CHECKSUMS:
-  Bugsnag: 5c3f9d33e88c824a0038e1b14629045929182cbb
-  bugsnag_crashlytics: ee0b687f514ad22a07d1984f77d13deca56fa84a
+  Bugsnag: 955a7d5372789b4db5964a8e131ebc20e96ddd3a
+  bugsnag_crashlytics: 2bcbf64303264b3a315359a89f81adbaaba049f6
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
 
 PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

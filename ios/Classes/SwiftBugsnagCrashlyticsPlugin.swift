@@ -17,13 +17,15 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
         result(FlutterError(code: "api_key problem", message: nil, details: nil))
         return
       }
-      let config = BugsnagConfiguration();
-      config.apiKey = apiKey;
+      let config = BugsnagConfiguration.init(apiKey)
       if let releaseStage = arguments["releaseStage"] as? String {
        config.releaseStage = releaseStage
       }
       if let appVersion = arguments["appVersion"] as? String {
        config.appVersion = appVersion
+      }
+      if let persistUser = arguments["persistUser"] as? Bool {
+        config.persistUser = persistUser
       }
       Bugsnag.start(with: config)
       bugsnagStarted = true
@@ -38,6 +40,20 @@ public class SwiftBugsnagCrashlyticsPlugin: NSObject, FlutterPlugin {
           let exception = NSException(name:NSExceptionName(rawValue: exceptionSource), reason: info)
           Bugsnag.notify(exception)
           result(nil)
+        }
+        else {
+            result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
+        }
+    } else if (call.method == "Crashlytics#setUserData") {
+        if (bugsnagStarted) {
+            let arguments = call.arguments as? NSDictionary
+            
+            let userId = arguments!["user_id"] as? String
+            let userEmail = arguments!["user_email"] as? String
+            let userName = arguments!["user_name"] as? String
+            
+            Bugsnag.setUser(userId, withEmail: userEmail, andName: userName)
+            result(nil)
         }
         else {
             result(FlutterError(code: "Bugsnag not started", message: nil, details: nil))
