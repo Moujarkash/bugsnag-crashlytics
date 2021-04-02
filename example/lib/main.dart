@@ -1,12 +1,16 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:bugsnag_crashlytics/bugsnag_crashlytics.dart';
+import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
-  BugsnagCrashlytics.instance.register(androidApiKey: "ANDROID_API_KEY", iosApiKey: "IOS_API_KEY", releaseStage: 'RELEASE_STAGE', appVersion: 'APP_VERSION');
+  BugsnagCrashlytics.instance.register(
+      androidApiKey: "ANDROID_API_KEY",
+      iosApiKey: "IOS_API_KEY",
+      releaseStage: 'RELEASE_STAGE',
+      appVersion: 'APP_VERSION');
 
   FlutterError.onError = BugsnagCrashlytics.instance.recordFlutterError;
 
@@ -21,9 +25,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(child: Text("Hello Bugsnag"),),
+        body: Center(
+          child: Text("Hello Bugsnag"),
+        ),
       ),
     );
   }
 }
-

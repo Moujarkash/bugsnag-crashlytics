@@ -13,11 +13,11 @@ class BugsnagCrashlytics {
       const MethodChannel('bugsnag_crashlytics');
 
   Future<void> register({
-    String androidApiKey,
-    String iosApiKey,
-    String releaseStage,
-    String appVersion,
-    bool persistUser,
+    String? androidApiKey,
+    String? iosApiKey,
+    String? releaseStage,
+    String? appVersion,
+    bool? persistUser,
   }) async {
     var apiKey;
 
@@ -42,11 +42,11 @@ class BugsnagCrashlytics {
   }
 
   Future<void> addUserData({
-    String userId,
-    String userEmail,
-    String userName,
+    String? userId,
+    String? userEmail,
+    String? userName,
   }) async {
-    HashMap userData = HashMap<String, String>();
+    HashMap userData = HashMap<String, String?>();
 
     userData.putIfAbsent('user_id', () => userId);
     userData.putIfAbsent('user_email', () => userEmail);
@@ -65,11 +65,11 @@ class BugsnagCrashlytics {
         context: details.context,
         information: details.informationCollector == null
             ? null
-            : details.informationCollector());
+            : details.informationCollector!());
   }
 
-  Future<void> _recordError(dynamic exception, StackTrace stack,
-      {dynamic context, Iterable<DiagnosticsNode> information}) async {
+  Future<void>? _recordError(dynamic exception, StackTrace? stack,
+      {dynamic context, Iterable<DiagnosticsNode>? information}) async {
     final String _information = (information == null || information.isEmpty)
         ? ''
         : (StringBuffer()..writeAll(information, '\n')).toString();
@@ -90,7 +90,7 @@ class BugsnagCrashlytics {
     // The stack trace can be null. To avoid the following exception:
     // Invalid argument(s): Cannot create a Trace from null.
     // We can check for null and provide an empty stack trace.
-    stack ??= StackTrace.current ?? StackTrace.fromString('');
+    stack ??= StackTrace.current;
 
     // Report error.
     final List<String> stackTraceLines =
@@ -102,7 +102,7 @@ class BugsnagCrashlytics {
     // English when following the word 'thrown'" according to the documentation for
     // [FlutterErrorDetails.context]. It is displayed to the user on Crashlytics
     // as the "reason", which is forced by iOS, with the "thrown" prefix added.
-    final String result = await _channel
+    final String? result = await _channel
         .invokeMethod<String>('Crashlytics#report', <String, dynamic>{
       'exception': "${exception.toString()}",
       'context': '$context',
