@@ -14,9 +14,10 @@ void main() {
 
   FlutterError.onError = BugsnagCrashlytics.instance.recordFlutterError;
 
-  runZoned(() {
-    runApp(MyApp());
-  }, onError: BugsnagCrashlytics.instance.recordError);
+  runZonedGuarded<Future<void>>(() async {
+    runApp(
+     MyApp());
+  }, BugsnagCrashlytics.instance.recordError);
 }
 
 class MyApp extends StatelessWidget {
