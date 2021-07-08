@@ -1,3 +1,7 @@
+## 1.0.0
+
+* nullsafety support
+
 ## 0.0.7
 
 * iOS Bugsnag SDK updated + 'setUser' option
