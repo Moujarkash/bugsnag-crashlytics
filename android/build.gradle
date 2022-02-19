@@ -6,7 +6,10 @@ buildscript {
     ext.bugsnag_version = '5.+'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven {
+            url "https://repo1.maven.org/maven2/"
+        }
     }
 
     dependencies {
@@ -19,7 +22,10 @@ buildscript {
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        maven {
+            url "https://repo1.maven.org/maven2/"
+        }
     }
 }
 
