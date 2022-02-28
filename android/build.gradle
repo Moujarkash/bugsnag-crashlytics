@@ -3,29 +3,26 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext.kotlin_version = '1.4.0'
-    ext.bugsnag_version = '5.+'
+    ext.bugsnag_version = '5.9.5'
+    ext.bugsnag_gradle_version = '5.8.1'
     repositories {
         google()
+        jcenter()
         mavenCentral()
-        maven {
-            url "https://repo1.maven.org/maven2/"
-        }
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.bugsnag:bugsnag-android-gradle-plugin:$bugsnag_version"
+        classpath "com.bugsnag:bugsnag-android-gradle-plugin:$bugsnag_gradle_version"
+//        classpath "com.bugsnag:bugsnag-android-gradle-plugin:$bugsnag_version"
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()
-        maven {
-            url "https://repo1.maven.org/maven2/"
-        }
+        jcenter()
     }
 }
 
@@ -50,4 +47,5 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.bugsnag:bugsnag-android:$bugsnag_version"
+
 }
